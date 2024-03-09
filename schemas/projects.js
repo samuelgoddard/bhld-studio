@@ -1,15 +1,50 @@
 import slugify from '../utils/slugify'
 
 export default {
-  title: "Work",
-  name: 'work',
+  title: "Project",
+  name: 'project',
   type: "document",
   fields: [
     {
       title: "Title",
-      description: "The name of this release",
+      description: "The name of this project",
       name: "title",
       type: "string",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Project Code",
+      description: "The project code for this project, eg: 'BH.01'",
+      name: "projectCode",
+      type: "string",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Teaser Image",
+      description: "The teaser image which will be shown on the projects index",
+      name: "teaserImage",
+      type: "defaultImage",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Gallery Images",
+      description: "The image gallery for this project",
+      name: "galleryImages",
+      type: 'array',
+      of: [
+        {type: 'defaultImage', title: 'Image'},
+      ],
+      options: {
+        layout: 'grid',
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Project Info",
+      description: "The text that will appear in the 'Project Info' section",
+      name: "projectInfo",
+      type: 'array', 
+      of: [{type: 'block'}],
       validation: Rule => Rule.required()
     },
     {
@@ -49,7 +84,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'campaignTitle',
+      subtitle: 'projectCode',
       media: 'teaserImage'
     }
   }

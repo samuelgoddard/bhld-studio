@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "shiftwalk-sanity-starter"
-  },
   "api": {
-    "projectId": "your-id-here",
+    "projectId": "qsotjvli",
     "dataset": "production"
+  },
+  "project": {
+    "name": "Bhude Arcitects"
   },
   "plugins": [
     "@sanity/base",
@@ -16,8 +16,7 @@
     "@sanity/dashboard",
     "media",
     "@sanity/production-preview",
-    "vercel-deploy",
-    "order-documents"
+    "vercel-deploy"
   ],
   "env": {
     "development": {
@@ -34,10 +33,6 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./sanity-structure.js"
-    },
-    {
-      "implements": "part:@sanity/base/brand-logo",
-      "path": "./logo/myLogo.js"
     },
     {
       "implements": "part:@sanity/base/theme/variables/override-style",

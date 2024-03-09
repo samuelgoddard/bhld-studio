@@ -1,20 +1,25 @@
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'Contact',
+  name: 'contact',
   type: 'document',
   __experimental_actions: ['update', 'create', 'delete', 'publish'],
   fields: [
     {
-      title: 'Title',
-      name: 'title',
+      title: 'Email Address',
+      name: 'emailAddress',
       type: 'string',
       validation: Rule => Rule.required()
     },
     {
-      title: 'Intro Text',
-      name: 'introText',
-      type: 'text',
-      rows: 3,
+      title: 'Phone',
+      name: 'phone',
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Instagram',
+      name: 'instagram',
+      type: 'url',
       validation: Rule => Rule.required()
     },
     {
